@@ -1,17 +1,16 @@
 :root{
-  --brand: #fcb147;        /* main color */
-  --brand-dark: #c98d38;   /* hover color */
-  --accent-warm: #8a4c16;  /* small accents and borders */
-  --bg: #FFFDF5;           /* page background */
-  --soft-wash: #FEE499;
-  --text: #2c2c2c;         /* main txt color  */
+  --brand: #fcb147;
+  --brand-dark: #c98d38;
+  --accent-warm: #8a4c16;
+  --bg: #FFFDF5;
+  --soft-wash: #ffe18a;
+  --text: #45260f;
   --muted: #6c6c6c;
   --card-bg: #ffffff;
   --radius: 8px;
   --shadow: 0 6px 18px rgba(22,22,22,0.06);
 }
 
-/* base */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -22,12 +21,11 @@ body{
   line-height:1.45;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+  font-weight:500;
 }
 
-/* layout container */
 .container{max-width:1000px; margin:0 auto; padding:1rem}
 
-/* header */
 .site-header{
   border-bottom:1px solid rgba(0,0,0,0.06);
   position:sticky;
@@ -36,20 +34,38 @@ body{
   z-index:20;
 }
 .header-inner{display:flex; align-items:center; justify-content:space-between; gap:1rem}
-.logo{font-size:1.1rem; margin:0; padding:.6rem 0; font-weight:600; color:var(--text)}
-.nav a{margin-left:1rem; text-decoration:none; color:var(--muted); font-weight:500}
+.logo{font-size:1.1rem; margin:0; padding:.6rem 0; font-weight:700; color:var(--text)}
+.nav a{margin-left:1rem; text-decoration:none; color:var(--muted); font-weight:600}
 .nav a:hover{color:var(--text)}
 
-/* hero */
 .hero{
-  padding:3rem 0;
+  padding:2rem 0 0;
   text-align:left;
   background: transparent;
 }
-.tagline{font-size:1.6rem; margin:.2rem 0; font-weight:600}
-.lead{color:var(--muted); margin:.4rem 0 1rem}
+.hero .container{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  overflow:hidden;
+  display:block;
+  border:1px solid rgba(0,0,0,0.04);
+  box-shadow:var(--shadow);
+  padding:1.25rem 1.25rem;
+  margin-bottom:1rem;
+}
 
-/* buttons */
+.tagline{font-size:1.6rem; margin:.2rem 0; font-weight:700; color:var(--text)}
+.lead{color:var(--muted); margin:.4rem 0 1rem; font-weight:500}
+.hero .meta{font-size:.9rem; color:var(--muted); margin-bottom:.75rem}
+
+.hero + .container.projects,
+.hero + section.projects,
+.hero + .projects{
+  border-top:1px solid rgba(0,0,0,0.06);
+  padding-top:1.25rem;
+  margin-top:1rem;
+}
+
 .btn{
   display:inline-block;
   background:var(--brand);
@@ -57,7 +73,7 @@ body{
   padding:.5rem .9rem;
   border-radius:8px;
   text-decoration:none;
-  font-weight:600;
+  font-weight:700;
   border:1px solid transparent;
   transition:transform .08s ease, box-shadow .12s ease, background-color .12s ease;
   box-shadow:none;
@@ -78,7 +94,6 @@ body{
   background:rgba(0,0,0,0.02);
 }
 
-/* projects grid and cards */
 .projects h3, .about h3, .resume h3, .contact h3{margin-top:0}
 .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:1rem}
 .card{
@@ -92,16 +107,14 @@ body{
 }
 .card-img{width:100%; height:140px; object-fit:cover; background:#f8f5ef}
 .card-body{padding:.75rem}
-.card h4{margin:.1rem 0 .35rem; font-size:1rem}
+.card h4{margin:.1rem 0 .35rem; font-size:1rem; color:var(--text); font-weight:700}
 
-/* small text or muted */
 .muted{color:var(--muted)}
 .small{font-size:.85rem; color:var(--muted)}
 
-/* skills badges */
 .skills{list-style:none; padding:0; display:flex; gap:.5rem; flex-wrap:wrap; margin:0}
 .skills li{
-  background:rgba(138,76,22,0.07); /* soft warm tan */
+  background:rgba(138,76,22,0.07);
   color:var(--accent-warm);
   padding:.3rem .5rem;
   border-radius:999px;
@@ -109,7 +122,6 @@ body{
   border:1px solid rgba(138,76,22,0.06);
 }
 
-/* footer */
 .site-footer{
   border-top:1px solid rgba(0,0,0,0.06);
   padding:1rem 0;
@@ -118,10 +130,8 @@ body{
   background:transparent;
 }
 
-/* Accessibility helpers */
-a:focus, .btn:focus{ outline:3px solid rgba(252,177,71,0.18); outline-offset:3px; border-radius:6px; }
+a:focus, .btn:focus{ outline:3px solid rgba(255,225,138,0.18); outline-offset:3px; border-radius:6px; }
 
-/* Responsive tweaks */
 @media (max-width:600px){
   .tagline{font-size:1.25rem}
   .header-inner{flex-direction:row}
